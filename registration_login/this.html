@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile Toggle</title>
+<style>
+  /* Styles for demonstration purposes */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+  }
+  .profile-detail {
+    display: none;
+    padding: 20px;
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  .profile-detail.active {
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <h1>Header</h1>
+  <div class="flex">
+    <div class="profile-detail">
+      <!-- Profile details content here -->
+      <p>This is the profile details section.</p>
+    </div>
+  </div>
+  <button id="user-btn">User Button</button>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    let profile = document.querySelector('.profile-detail');
+    let btn = document.querySelector('#user-btn');
+
+    btn.addEventListener('click', function() {
+      profile.classList.toggle('active');
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Landing Page</title>
+    <style>
+        /* CSS for styling */
+        body {
+            font-family: General sans;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+        /* Add your custom styles for each section */
+        .hero-section {
+            background-color:seagreen;
+            padding: 100px 0;
+            text-align: center;
+           background-color:  rgb(72, 0, 139);
+           color:#f0f0f0;
+        }
+        .box{
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+        }
+        .btn{
+    background-color: var(--white-alpha-25);
+    border:2px solid var(--white-alpha-40);
+    backdrop-filter: var(--backdrop-filter);
+    box-shadow: var(--box-shadow);
+    text-transform: capitalize;
+    color: var(--main-color);
+    padding: 8rem 2 rem;
+    border-radius: 1.5rem;
+    font-size: 20px;
+    cursor: pointer;
+    position :relative;
+    text-align: center;
+}.btn::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 30px;
+    background-color: var(--main-color);
+    z-index: -1;
+    transition: width 0.3s ease;
+}
+.btn:hover::before{
+    width:100%;
+}
+.btn:hover{
+    color: #000;
+    background-color: lightblue;
+    font-size: 20px;
+}
+        .founder-section {
+            background-color: #ffffff;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .why-choose-section {
+            background-color: #f0f0f0;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .countdown-section {
+            background-color:rgb(72, 0, 139);
+            padding: 100px 0;
+            text-align: center;
+            color: #f0f0f0;
+        }
+        #countdown{
+            padding: 10px;
+            margin:10px;
+            font-size: 25px;
+            font-weight: 30px;
+            color: #f0f0f0;
+        }
+        .cta-section {
+            background-color:rgb(90, 0, 139);
+            padding: 100px 0;
+            text-align: center;
+        }
+        .btn{
+            border-radius: 10px;
+            background-color:yellow;
+            color: #000;
+            font-size: 18px;
+            padding: 20px 30px;
+            margin: 2px;
+            font-weight: 15px;
+            cursor: pointer;
+    position :relative;
+    text-align: center;
+    text-transform: capitalize;
+        }
+        .rate{
+            color: yellow;
+            font-size: 30px;
+        }
+        .row{
+            color: #f0f0f0;
+
+        }
+
+        .red{
+            color: red;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="box">
+            <h1>Discover a consultant's Approach to Problem Solving</h1>
+            <p>Discover amazing experiences with us.</p>
+        </div>
+        
+        <img src="" alt="image" class="image">
+        <button class="btn">Register Now at ₹499</button>
+    </section>
+
+    <!-- About Founder Section -->
+    <section class="founder-section">
+        <h2>About Founderx</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec quam nunc.</p>
+    
+        <div class="row">
+            
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-section">
+        <h2 class="red">But,</h2>
+        <h2>Why should You became a Mindful Marketer</h2>
+        <ul>
+            <li>Professional team with years of experience</li>
+            <li>High-quality services tailored to your needs</li>
+            <li>Outstanding customer support</li>
+        </ul>
+    </section>
+
+    <!-- Countdown Timer Section -->
+    <section class="countdown-section">
+        <h2>Time is running out.<br>
+        Grab your spot first</h2>
+        
+        <div id="countdown"></div>
+
+        <button class="btn">Register Now at ₹499</button>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="row">
+            <h1 class="cta">Crash Course Launch Offer ( Save INR 1799 )</h1>
+            <ul>
+                <li>Professional team with years of experience</li>
+                <li>High-quality services tailored to your needs</li>
+                <li>Outstanding customer support</li>
+            </ul>
+
+        </div>
+       
+        
+        
+        <h2>Price of the program</h2>
+        <br>
+
+        <h1 class="rate">₹499</h1>
+        <button class="btn">Register Now</button>
+    </section>
+
+    <!-- JavaScript for Countdown Timer -->
+    <script>
+        // JavaScript for countdown timer
+        var countDownDate = new Date("Feb 28, 2024 00:00:00").getTime();
+
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById("countdown").innerHTML = days + "d : " + hours + "h : "
+            + minutes + "m : " + seconds + "s ";
+            
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
